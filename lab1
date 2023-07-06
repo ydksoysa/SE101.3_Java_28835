@@ -1,0 +1,64 @@
+package com.mycompany.mavenproject6;
+
+abstract class Container {
+    abstract double volume();
+    
+}
+
+
+
+
+package com.mycompany.mavenproject6;
+
+public class CylindricalContainer extends Container {
+    private double height,radius,volume;
+    
+    public void SetRadius(double r)
+    {
+        radius=r;
+    }
+
+    public void SetHeight(double h)
+    {
+        height=h;
+    }
+    
+    public double GetRadius()
+    {
+        return radius;
+    }
+    public double GetHeight()
+    {
+        return height;
+    }
+    
+        
+    
+    @Override
+    public double volume()
+    {
+        return 3.1459*GetRadius()*GetRadius()*GetHeight();
+    }
+    
+    public void display()
+    {
+        System.out.println("volume is: "+volume());
+    }
+    
+}
+
+
+package com.mycompany.mavenproject6;
+
+
+public class Mavenproject6 {
+
+    public static void main(String[] args) {
+        CylindricalContainer c1=new CylindricalContainer();
+        c1.SetHeight(50.70f);
+        c1.SetRadius(30.00f);
+        
+      
+        c1.display();
+    }
+}
